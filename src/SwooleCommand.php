@@ -13,7 +13,7 @@ class SwooleCommand extends Command
     /**
      * @var string
      */
-    protected $signature = 'swoole {action}';
+    protected $signature = 'swoole {action?}';
 
     /**
      * @var string
@@ -42,6 +42,9 @@ class SwooleCommand extends Command
                 break;
             case 'vendor:publish':
                 $this->vendorPublish();
+                break;
+            default:
+                $this->info('|start|restart|stop|status|vendor:publish|');
                 break;
         }
     }

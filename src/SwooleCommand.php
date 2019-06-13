@@ -34,9 +34,6 @@ class SwooleCommand extends Command
             case 'restart':
                 $this->restart();
                 break;
-            case 'reload':
-                $this->reload();
-                break;
             case 'stop':
                 $this->stop();
                 break;
@@ -80,16 +77,6 @@ class SwooleCommand extends Command
         }
         $this->info('done');
         $this->start();
-    }
-
-    /**
-     *
-     */
-    protected function reload()
-    {
-        $this->info('reloading...');
-        $this->signal(SIGUSR1);
-        $this->info('done');
     }
 
     /**
